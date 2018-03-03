@@ -40,7 +40,36 @@ $(function(){
   $(".icon_logout").on("click", function () {
     //显示模态框
     $("#logoutModal").modal("show");
-
+  });
+  //不要在事件里面注册事件
+  $(".btn_logout").on("click", function () {
+  //需要告诉服务器，我需要退出，  让服务器把对应的session销毁
+    $.ajax({
+      type:'GET',
+      url:'/employee/employeeLogout',
+      success:function (info) {
+        if(info.success) {
+          //退出成功，才跳转到登录页
+          location.href = "login.html";
+        }
+      }
+    })
   });
 
-})
+
+  //如果不是登录页，发送ajax请求，查询管理员是否登录
+  //indexOf()返回字符串中是否有括号内的字符串，如果没有返回数值-1，，如果有返回字符串所在的位置
+  if(location.href.indexOf("login.html") == -1){
+    $.ajax({
+      type:"GET",
+      url:"/employee/checkRootLogin",
+      success:function (info) {
+        console.log(info);
+        //判断，info.error是否是400
+        if(info.error === 400) {
+          location.href = "login.html";
+        }
+      }
+    })
+  }
+});
