@@ -62,15 +62,34 @@
         <li><a href="#">管理系统</a></li>
         <li><a href="#">首页</a></li>
       </ol>
+
+      <!--内容-->
+      <div class="lt_content">
+        <div class="charts_1 pull-left"></div>
+        <div class="charts_2 pull-right"></div>
+      </div>
     </div>
   </div>
-  <!--内容-->
-  <div class="lt_content">
-    <div class="charts_1 pull-left">11</div>
-    <div class="charts_2 pull-right">22</div>
-  </div>
 
 
+  <!--退出登录的模态框-->
+  <div class="modal fade" id="logoutModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+          <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span> 您确定要退出后台管理系统吗？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary">退出</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
 
 

@@ -90,7 +90,9 @@ a, a:link, a:visited, a:hover, a:active {
     color: #ffffff;
     font-size: 16px;
 }
-
+.lt_content {
+    margin-top:50px;
+}
 .lt_content .charts_1,
 .lt_content .charts_2 {
     width: 45%;

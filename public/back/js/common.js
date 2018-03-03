@@ -35,4 +35,12 @@ $(function(){
     //让main的padding-left:0
     $('.lt_main').toggleClass("now");
   })
+
+  //退出功能
+  $(".icon_logout").on("click", function () {
+    //显示模态框
+    $("#logoutModal").modal("show");
+
+  });
+
 })
