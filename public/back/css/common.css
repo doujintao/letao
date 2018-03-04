@@ -99,6 +99,12 @@ a, a:link, a:visited, a:hover, a:active {
     height: 400px;
 }
 
+.table th,
+.table.table-bordered td {
+    text-align: center;
+    vertical-align: middle;
+}
+
 
 
 
