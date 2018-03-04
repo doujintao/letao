@@ -41,4 +41,38 @@ $(function () {
   //打开页面需要首先渲染一次
   render();
 
+
+  //启用禁用用户
+  //动态渲染的数据注册点击事件需要进行时间委托
+  $('tbody').off().on('click',".btn",function(){
+    //显示模态框
+    $('#userModal').modal('show');
+
+    //获取到点击的按钮所在的用户的id
+    var id = $(this).parent().data('id');
+
+    var isDelete = $(this).hasClass('btn-success')?1:0;
+
+    console.log(id,isDelete);
+    $('.btn_confirm').on('click',function(){
+      //点击确定发送ajax请求，修改数据，重新渲染
+      $.ajax({
+        type:'POST',
+        url:'/user/updateUser',
+        data:{
+          id:id,
+          isDelete:isDelete
+        },
+        success:function(info){
+          if(info.success){
+            $('#userModal').modal('hide');
+
+            render();
+          }
+        }
+      })
+    })
+
+  })
+
 });
