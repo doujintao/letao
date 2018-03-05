@@ -5,7 +5,6 @@ $(function(){
   //渲染二级分类列表以及分页
   var page = 1;
   var pageSize = 3;
-
   var render = function (){
     $.ajax({
       type:'GET',
@@ -31,6 +30,11 @@ $(function(){
       }
     })
   }
-
+  //打开页面首先渲染一次
   render();
+
+  //点击打开模态框
+  $('.btn_add').on('click',function(){
+    $('#secondModal').modal('show');
+  })
 })

@@ -15,7 +15,7 @@ $(function(){
   $(document).ajaxStop(function () {
     setTimeout(function () {
       NProgress.done();
-    }, 3000);
+    }, 500);
   });
 
   //首页导航菜单js
