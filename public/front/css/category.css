@@ -1,0 +1,70 @@
+.lt_main .nav {
+  width: 90px;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.nav li a{
+  display: block;
+  height: 50px;
+  border-bottom:1px solid red;
+  border-right:1px solid red;
+  text-align: center;
+  line-height: 50px;
+  background-color: pink;
+}
+
+.nav li.now a {
+  border-right: none;
+  background-color: #fff;
+}
+
+.contant {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.contant li {
+  float: left;
+  width: 33.33%;
+}
+.contant li img {
+  width: 60px;
+  height: 60px;
+  margin: 10px auto;
+}
+
+.content li p {
+  text-align: center;
+}
+
+.tips {
+  text-align: center;
+  padding: 10px;
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
