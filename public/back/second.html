@@ -32,7 +32,7 @@
           分类管理
         </a>
         <div class="second" style="display: block">
-          <a href="first.html" >一级分类</a>
+          <a href="first.html">一级分类</a>
           <a href="second.html" class="now">二级分类</a>
         </div>
       </li>
@@ -73,7 +73,7 @@
         </tr>
         </thead>
         <tbody>
-          <!--挖个坑-->
+        <!--挖个坑-->
         </tbody>
       </table>
 
@@ -81,16 +81,11 @@
       <div class="paginator_box pull-right">
         <ul id="paginator"></ul>
       </div>
-
     </div>
-
-
   </div>
 
 
-
 </div>
-
 
 
 <!--退出登录的模态框-->
@@ -121,13 +116,41 @@
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
         <h4 class="modal-title">添加分类</h4>
       </div>
-      <div class="modal-body">
-        <form id="form">
+      <form id="form">
+        <div class="modal-body">
+          <!--模态框的下拉菜单-->
           <div class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="添加一级分类的名单" name="categoryName" autocomplete="off">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                <span class="dropdown_text">请选择一级分类</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <!--再挖个坑-->
+              </ul>
+              <!--input type="hidden" 一样可以往后台传递数据，但是输入框会隐藏-->
+              <input type="hidden" name="categoryId">
+            </div>
           </div>
-        </form>
-      </div>
+          <!--模态框的输入框-->
+          <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="添加二级分类的名称" name="brandName" autocomplete="off">
+          </div>
+          <!--图片按钮-->
+          <div class="form-group">
+            <div class="fileBox">
+              <label for='fileupload' class="btn btn-default">上传图片</label>
+              <input type="file" id="fileupload" class="btn btn-default" style="display: none" name="pic1" data-url="/category/addSecondCategoryPic">
+            </div>
+          </div>
+          <!--图片-->
+          <div class="form-group img_box">
+            <img src="./images/none.png" alt="" width=100 height=100>
+            <input type="hidden" name="brandLogo">
+            <input type="hidden" name="hot" value="1">
+          </div>
+        </div>
+      </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         <!--form:给input指定提交的form表单-->
@@ -136,6 +159,8 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
 <!--准备模板-->
 <script type="text/template" id="tpl">
   {{each rows v i}}
@@ -148,7 +173,16 @@
   {{/each}}
 </script>
 
+<!--再准备模板-->
+<script type="text/html" id="tpl2">
+  {{each rows v i}}
+  <li><a href="JavaScript:;" data-id="{{v.id}}">{{v.categoryName}}</a></li>
+  {{/each}}
+</script>
+
 <script src="lib/jquery/jquery.min.js"></script>
+<script src='./lib/jquery-fileupload/jquery.ui.widget.js'></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
