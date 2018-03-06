@@ -2,14 +2,14 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>商品管理</title>
+  <title>乐淘管理系统-商品管理</title>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
   <link rel="stylesheet" href="lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-
+<!--侧边栏-->
 <div class="lt_aside">
   <div class="brand">
     <a href="index.html">黑马18期</a>
@@ -31,7 +31,7 @@
           <span class="glyphicon glyphicon-list"></span>
           分类管理
         </a>
-        <div class="second" style="display: none">
+        <div class="second" style="display: block">
           <a href="first.html">一级分类</a>
           <a href="second.html">二级分类</a>
         </div>
@@ -45,30 +45,64 @@
     </ul>
   </div>
 </div>
+<!--主体区-->
 <div class="lt_main">
-
+  <!--topbar-->
   <div class="lt_header">
     <a href="javascript:;" class="pull-left icon_menu"><span class="glyphicon glyphicon-align-justify"></span></a>
     <a href="javascript:;" class="pull-right icon_logout"><span class="glyphicon glyphicon-log-out"></span></a>
   </div>
 
   <div class="container-fluid">
-    <!--路径导航-->
+    <!--面包屑导航-->
     <ol class="breadcrumb">
       <li><a href="#">管理系统</a></li>
       <li class="active">商品管理</li>
     </ol>
 
-    <!--内容-->
-    <div class="lt_content"></div>
-
-
+    <!--内容区域-->
+    <div class="lt_content">
+      <!--添加分类-->
+      <button class="btn btn-default btn_add mb_20">添加分类</button>
+      <!--分类表格-->
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th width="10%">序号</th>
+          <th width="25%">商品名称</th>
+          <th width="25%">商品描述</th>
+          <th width="10%">商品库存</th>
+          <th width="10%">商品尺寸</th>
+          <th width="10%">商品状态</th>
+          <th width="10%">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--挖个坑-->
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <!--三元表达式-->
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>
+              <button class="btn btn-danger btn-sm">禁用</button>
+              <button class="btn btn-success btn-sm">启用</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--分页标签，只要一个ul就行  指定id-->
+      <div class="paginator_box pull-right">
+        <ul id="paginator"></ul>
+      </div>
+    </div>
   </div>
 
 
-
 </div>
-
 
 
 <!--退出登录的模态框-->
@@ -91,12 +125,78 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<!--添加内容的模态框-->
+<div class="modal fade" id="addModal" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">添加分类</h4>
+      </div>
+      <form id="form">
+        <div class="modal-body">
+          <!--模态框的下拉菜单-->
+          <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                <span class="dropdown_text">请选择一级分类</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <!--再挖个坑-->
+              </ul>
+              <!--input type="hidden" 一样可以往后台传递数据，但是输入框会隐藏-->
+              <input type="hidden" name="categoryId">
+            </div>
+          </div>
+          <!--模态框的输入框-->
+          <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="添加二级分类的名称" name="brandName" autocomplete="off">
+          </div>
+          <!--图片按钮-->
+          <div class="form-group">
+            <div class="fileBox">
+              <label for='fileupload' class="btn btn-default">上传图片</label>
+              <input type="file" id="fileupload" class="btn btn-default" style="display: none" name="pic1" data-url="/category/addSecondCategoryPic">
+            </div>
+          </div>
+          <!--图片-->
+          <div class="form-group img_box">
+            <img src="./images/none.png" alt="" width=100 height=100>
+            <input type="hidden" name="brandLogo">
+            <input type="hidden" name="hot" value="1">
+          </div>
+        </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <!--form:给input指定提交的form表单-->
+        <button type="submit" form="form" class="btn btn-primary">添加</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!--准备模板-->
+<script type="text/template" id="tpl">
+
+</script>
+
+<!--再准备模板-->
+<script type="text/html" id="tpl2">
+
+</script>
 
 <script src="lib/jquery/jquery.min.js"></script>
+<script src='./lib/jquery-fileupload/jquery.ui.widget.js'></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/login.js"></script>
+<script src="js/product.js"></script>
 </body>
 </html>
