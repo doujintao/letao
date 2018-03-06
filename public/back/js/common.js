@@ -34,6 +34,9 @@ $(function(){
     $('.lt_aside').toggleClass("now");
     //让main的padding-left:0
     $('.lt_main').toggleClass("now");
+    $('.lt_header').toggleClass("now");
+    $('.lt_content').toggleClass("now");
+    $('.container-fluid ol').toggleClass("now");
   })
 
   //退出功能
