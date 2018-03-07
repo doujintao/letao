@@ -106,6 +106,26 @@ body {
   overflow: hidden;
   position: relative;
 }
+.lt_search {
+  padding: 10px;
+  position: relative;
+}
+.lt_search input {
+  font-size: 12px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #007aff;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+.lt_search button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 0 5px 5px 0;
+}
 
 
 
