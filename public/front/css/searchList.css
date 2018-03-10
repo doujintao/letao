@@ -50,6 +50,10 @@
 }
 .lt_main .product p {
   color: #000;
+  height: 39px;
+}
+.lt_main .product img {
+  height: 276.89px;
 }
 .price {
   color: red;

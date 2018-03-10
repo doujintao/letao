@@ -7,26 +7,41 @@
     indicators: false
   });
 
+
+$(function () {
+  //轮播图部分初始化
+  var mySwiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+      delay: 1000,
+      stopOnLastSlide: false,
+      disableOnInteraction: false,
+    },
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination'
+    }
+  })
+});
+
+
 //需求：能够把地址栏所有的参数封装成一个对象
-function getSearch(key){
-  //获取参数
+function getSearch(key) {
+
+  //1. 获取到参数
   var search = location.search;
 
-  //对参数列表进行解码
+  //2. 对参数列表进行解码
   search = decodeURI(search);
 
-  //去掉？splice()
-  //splice() 方法通过删除现有元素和/或添加新元素来更改一个数组的内容。
-
-  //splice(2, 0, 'drum'); // 在索引为2的位置插入'drum'
+  //3. 去掉?
   search = search.slice(1);
 
-  //把字符串根据&切割成数组
-  //split() 方法使用指定的分隔符字符串将一个String对象分割成字符串数组，以将字符串分隔为子字符串，以确定每个拆分的位置。
+  //4. 把字符串根据&切割成数组
   var arr = search.split('&');
 
-  //遍历数组
-  var obj = {};
+  //5. 遍历数组
+ var obj = {};
   arr.forEach(function(e,i){
     var k = e.split('=')[0];
     var v = e.split('=')[1];

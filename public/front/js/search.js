@@ -27,7 +27,7 @@ $(function(){
     var txt = $('.lt_search input').val().trim();
     $('.lt_search input').val("");
     if(txt == ""){
-      alert('1');
+      mui.toast('请输入搜索关键字');
       return;
     };
     //3. 获取到存储数据的数组

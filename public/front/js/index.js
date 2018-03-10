@@ -3,7 +3,7 @@
  */
 $(function () {
   //轮播图部分初始化
-  var mySwiper = new Swiper ('.swiper-container', {
+  var mySwiper = new Swiper('.swiper-container', {
     loop: true,
     autoplay: {
       delay: 1000,
