@@ -4,43 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>乐淘商城-搜索页面</title>
+  <title>乐淘商城-首页</title>
   <link rel="icon" href="./favicon.ico">
   <link rel="stylesheet" href="./lib/mui/css/mui.css">
   <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
   <link rel="stylesheet" href="./lib/swiper/swiper.min.css">
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="./css/search.css">
+  <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
 <div class="lt_container">
   <!--头部部分-->
   <div class="lt_header">
-    <a href="javascript:history.go(-1);" class="icon_home"><span class="fa fa-chevron-left"></span></a>
-    <h4>搜索中心</h4>
+    <a href="index.html" class="icon_home"><span class="fa fa-home"></span></a>
+    <h4>登录</h4>
   </div>
 
   <!--内容部分-->
   <div class="lt_main">
-    <div class="mui-scroll-wrapper">
-      <div class="mui-scroll">
-        <!--搜索框-->
-        <div class="lt_search">
-          <input type="text" placeholder="请输入搜索关键字">
-          <button type="submit" class="mui-btn mui-btn-primary">搜索</button>
-        </div>
-
-        <div class="lt_history">
-          <!--挖个大坑-->
-        </div>
+    <form class="mui-input-group">
+      <div class="mui-input-row">
+        <label>用户名</label>
+        <input type="text" class="mui-input-clear" name="username" placeholder="请输入用户名">
       </div>
-    </div>
+      <div class="mui-input-row">
+        <label>密码</label>
+        <input type="password" name="password" class="mui-input-password" placeholder="请输入密码">
+      </div>
+      <div class="mui-button-row">
+        <button type="button" class="mui-btn mui-btn-primary btn_login" >确认</button>
+        <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+      </div>
+    </form>
   </div>
 
   <!--底部部分-->
   <div class="lt_footer">
     <ul class="mui-clearfix">
-      <li>
+      <li >
         <a href="index.html">
           <span class="fa fa-home"></span>
           <p>首页</p>
@@ -58,7 +59,7 @@
           <p>购物车</p>
         </a>
       </li>
-      <li>
+      <li class="now">
         <a href="user.html">
           <span class="fa fa-user"></span>
           <p>个人中心</p>
@@ -69,36 +70,10 @@
   </div>
 </div>
 
-
-<script type="text/html" id="tpl">
-  {{if info.length===0}}
-  <p>未查找到更多的数据</p>
-  {{else}}
-  <!--头部部分-->
-  <div class="title mui-clearfix">
-    <span class="mui-pull-left">搜索历史</span>
-    <span class="mui-pull-right fa fa-trash btn_empty"> 清空记录</span>
-  </div>
-  <!--内容部分-->
-  <div class="content">
-    <ul>
-      {{each info v i}}
-      <li class="mui-clearfix">
-        <a href="searchList.html?key={{v}}" class="mui-pull-left">{{v}}</a>
-        <span data-index="{{i}}" class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"></span>
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-  {{/if}}
-</script>
-
-
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/swiper/swiper.min.js"></script>
-<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/search.js"></script>
+<script src="./js/login.js"></script>
 </body>
 </html>
