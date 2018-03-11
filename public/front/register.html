@@ -4,47 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>乐淘商城-首页</title>
+  <title>乐淘商城</title>
   <link rel="icon" href="./favicon.ico">
   <link rel="stylesheet" href="./lib/mui/css/mui.css">
   <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
   <link rel="stylesheet" href="./lib/swiper/swiper.min.css">
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="./css/register.css">
 </head>
 <body>
 <div class="lt_container">
   <!--头部部分-->
   <div class="lt_header">
     <a href="index.html" class="icon_home"><span class="fa fa-home"></span></a>
-    <h4>登录</h4>
+    <h4>注册</h4>
   </div>
 
   <!--内容部分-->
   <div class="lt_main">
-    <form class="mui-input-group">
+    <form class="myForm">
       <div class="mui-input-row">
-        <label>用户名</label>
-        <input type="text" class="mui-input-clear" name="username" placeholder="请输入用户名">
+        <input type="text" class="mui-input-clear" autocomplete="off" name="username" placeholder="请输入用户名">
       </div>
       <div class="mui-input-row">
-        <label>密码</label>
         <input type="password" name="password" class="mui-input-password" placeholder="请输入密码">
       </div>
+      <div class="mui-input-row">
+        <input type="password" id="repassword" class="mui-input-password" placeholder="请确认密码">
+      </div>
+      <div class="mui-input-row">
+        <input type="text"  name="mobile" placeholder="请输入手机号">
+        <button class="mui-btn mui-btn-primary btn_getCode">获取验证码</button>
+      </div>
+      <div class="mui-input-row">
+        <input type="text" class="mui-input-clear" name="vCode" placeholder="请输入验证码">
+      </div>
       <div class="mui-button-row">
-        <button type="button" class="mui-btn mui-btn-primary btn_login" >确认</button>
-        <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+        <button type="button" class="mui-btn mui-btn-primary btn_register">立即注册</button>
+
+      </div>
+      <div class="register">
+      <span class="mui-pull-left">
+          <input type="checkbox">
+          我同意《会员服务协议》
+      </span>
+        <a href="register.html" class="pull-right">登录</a>
       </div>
     </form>
-    <div class="register">
-      <a href="register.html" class="pull-right">立即注册</a>
-    </div>
+
   </div>
 
   <!--底部部分-->
   <div class="lt_footer">
     <ul class="mui-clearfix">
-      <li >
+      <li>
         <a href="index.html">
           <span class="fa fa-home"></span>
           <p>首页</p>
@@ -77,6 +90,6 @@
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/swiper/swiper.min.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/login.js"></script>
+<script src="./js/register.js"></script>
 </body>
 </html>

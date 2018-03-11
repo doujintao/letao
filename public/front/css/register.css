@@ -1,0 +1,33 @@
+.myForm {
+  padding: 10px;
+}
+
+.myForm .btn_getCode {
+  width:30%;
+  padding: 0;
+  height: 39px;
+  line-height: 39px;
+
+}
+.myForm [name="mobile"] {
+  width: 65%;
+}
+.myForm .btn_register {
+  width: 100%;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+}
+.myForm .register {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding-right: 10px;
+}
+.register a {
+  padding-top: 2px;
+}
+.myForm .btn_getCode.disabled {
+  background-color: #999;
+  border-color: #999;
+}
