@@ -11,6 +11,7 @@ $(function(){
     },
     success:function(info){
       //给对象info添加一个数组，在尺码方面可以设置
+      console.log(info);
       var tempArr = info.size.split('-');
       var arr = [];
       for (var i = +tempArr[0]; i <= tempArr[1];i++){
@@ -54,7 +55,7 @@ $(function(){
     //产品尺码
     var size = $('.size span.now').text();
     //产品数量
-    var num = $('mui-numbox-input').val();
+    var num = $('.mui-numbox-input').val();
 
     if(!size) {
       mui.toast('请选择鞋子尺码');

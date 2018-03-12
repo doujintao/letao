@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.lt_container {
+  padding-bottom: 85px;
+}
+.cart_img {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.cart_info  {
+  padding-left: 10px;
+  overflow: hidden;
+}
+.mui-table-cell {
+  /*才能继承父盒子的宽度*/
+  display: block;
+}
+.proname.mui-ellipsis-2 {
+  color: #000;
+  margin-bottom: 5px;
+  line-height: 20px;
+  margin-bottom:20px;
+}
+.price {
+  color: red;
+}
+.oldprice {
+  text-decoration: line-through;
+}
+.lt_edit_size {
+  margin-top: 10px;
+}
+.ck{
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+}
+
+.lt_order {
+  position: absolute;
+  height: 30px;
+  bottom: 55px;
+  width: 100%;
+  background-color: #eee;
+  border-top: 1px solid #ccc;
+  z-index: 999;
+  font-size: 12px;
+  line-height: 30px;
+  padding-left: 10px;
+  color: red;
+}
+.lt_order a {
+  background-color: red;
+  color: #fff;
+  padding: 0 10px;
+}
+
+.lt_edit_size span{
+  border: 1px solid red;
+  padding: 5px;
+  background-color: #eee;
+  line-height: 30px;
+  font-size: 12px;
+}
+.lt_edit_size span.now {
+  background-color: orange;
+}

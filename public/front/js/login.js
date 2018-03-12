@@ -26,7 +26,7 @@ $(function(){
         }
         if(info.success){
           if(location.search.indexOf('retUrl') != -1){
-            history.go(-1);
+            location.href = location.search.replace("?retUrl=","");
           }else{
             location.href = 'user.html';
           }
